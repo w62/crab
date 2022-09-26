@@ -88,11 +88,8 @@ jobs:
       - name: Download HTML & Sitemap
         uses: actions/download-artifact@v3
       
-      - name: Move Sitemap Into HTML
-        run: mv ./sitemap/sitemap.xml ./book/html
-      
       - name: Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./book/html
+          publish_dir: ./book
